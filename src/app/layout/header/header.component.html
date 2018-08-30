@@ -2,9 +2,9 @@
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <div fxFlex>Custom Toolbar</div>
-      <div fxFlex="5">
-        <mat-select placeholder="참고" (selectionChange)="selectChanged()">
-          <mat-option *ngFor="let item of site" [value]="item.url">
+      <div fxFlex="10">
+        <mat-select placeholder="참고" (selectionChange)="selectChanged($event.value)">
+          <mat-option *ngFor="let item of site"  [value]="item.url">
             {{item.name}}
           </mat-option>
         </mat-select>

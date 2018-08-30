@@ -29,8 +29,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-  selectChanged() {
-    alert("22")
+  selectChanged(event) {
+    window.open(event)
   }
 
 }

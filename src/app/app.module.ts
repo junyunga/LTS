@@ -7,12 +7,13 @@ import {SharedModule} from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './layout/header/header.component';
+import { MainTimeComponent } from './main-time/main-time.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    MainTimeComponent
   ],
   imports: [
     BrowserModule,

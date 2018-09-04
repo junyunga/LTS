@@ -1,3 +1,16 @@
-<div fxLayout="row" fxFlexFill>
-    <div id="background"></div>
+<div>
+    <div id="background">
+        <div class="clock-wrap" fxLayout="row" fxFlexFill>
+            <div class="clock-container" fxLayout="colmun" fxFlexFill fxLayoutAlign="space-around center">
+                <div class="clock-content">
+                    <div class="date">
+                        {{today | date: 'yyyy.MM.dd'}}
+                    </div>
+                    <div class="time">
+                        {{today | date: 'hh:mm:ss a'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

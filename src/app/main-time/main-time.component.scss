@@ -1,0 +1,29 @@
+#background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://source.unsplash.com/collection/190727/1920x1100');
+    background-repeat: no-repeat;
+    .clock-wrap {
+        // margin: auto;
+        width: 60vw;
+        height: auto;
+        .clock-container {
+            .clock-content {
+                color: #fff;
+                &>.date {
+                    font: {
+                        size: 50px;
+                    }
+                }
+                &>.time {
+                    font: {
+                        weight: bold;
+                        size: 130px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

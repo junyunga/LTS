@@ -23,6 +23,10 @@ export class HeaderComponent implements OnInit {
     {
       name: 'angular6',
       url:'https://angular.io'
+    },
+    {
+      name: 'three.js',
+      url: 'https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene'
     }
   ]
   constructor() { }

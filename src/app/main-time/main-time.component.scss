@@ -4,12 +4,24 @@
     height: 100%;
     background-image: url('https://source.unsplash.com/collection/190727/1920x1100');
     background-repeat: no-repeat;
-    .clock-wrap {
-        // margin: auto;
-        width: 60vw;
-        height: auto;
-        .clock-container {
-            .clock-content {
+    .main-wrap {
+        position: inherit;
+        top: 40%;
+        width: 100%;
+        height: 200px;
+        perspective: 600px;
+        .main-container {
+            position: relative;
+            margin: auto;
+            width: 60vw;
+            transition: transform 1s;
+            transform-style: preserve-3d; 
+            .card-face {
+
+                position: absolute;
+                backface-visibility: hidden;
+            }
+            .main-content {
                 color: #fff;
                 &>.date {
                     font: {
@@ -19,11 +31,17 @@
                 &>.time {
                     font: {
                         weight: bold;
-                        size: 130px;
+                        size: 100px;
                         text-align: center;
                     }
                 }
             }
+            .nav-content {
+                transform: rotateY( 180deg );
+            }
+        }
+        .main-container.is-flipped {
+            transform: rotateY(180deg);
         }
     }
 }

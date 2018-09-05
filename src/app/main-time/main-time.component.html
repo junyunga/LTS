@@ -1,18 +1,25 @@
 <div>
     <div id="background">
-        <div class="clock-wrap" fxLayout="row" fxFlexFill>
-            <div class="clock-container" fxLayout="colmun" fxFlexFill fxLayoutAlign="space-around center">
-                <div class="clock-content">
-                    <div class="date">
-                        {{today | date: 'yyyy.MM.dd'}}
+        <div class="main-wrap" fxLayout="row">
+                <div class="main-container" [ngClass]="{'is-flipped' : isflipped}" fxLayout="colmun" 
+                    fxLayoutAlign="space-around center"
+                    (mouseover)="flip($event)">
+                    <div class="main-content card-face">
+                        <div class="date">
+                            {{today | date: 'yyyy.MM.dd'}}
+                        </div>
+                        <div class="time">
+                            {{today | date: 'hh:mm:ss a'}}
+                        </div>
                     </div>
-                    <div class="time">
-                        {{today | date: 'hh:mm:ss a'}}
-                        <a [routerLink]="['/main']">main</a>
-                        <a [routerLink]="['/menu/three-d-design/screens/screen-test']">test</a>
+                    <div class="nav-content card-face">
+                        <div>
+                            111
+                        </div>
+                        <!-- <a [routerLink]="['/main']">main</a>
+                        <a [routerLink]="['/menu/three-d-design/screens/screen-test']">test</a> -->
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </div>

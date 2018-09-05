@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Directive, HostListener } from '@angular/core';
 
 @Component({
     selector: 'app-main-time',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./main-time.component.scss']
 })
 export class MainTimeComponent implements OnInit {
+    isflipped: boolean = false;
     today: number = 0;
     setTime: any = null;
     constructor() { }
@@ -18,6 +19,9 @@ export class MainTimeComponent implements OnInit {
     }
     getTodayTime(): void {
         this.today = Date.now();
+    }
+    flip(): void {
+        this.isflipped = true;
     }
     ngOnDestroy(): void {
         clearInterval(this.setTime);

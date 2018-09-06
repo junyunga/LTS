@@ -20,9 +20,15 @@ export class MainTimeComponent implements OnInit {
     getTodayTime(): void {
         this.today = Date.now();
     }
-    flip(): void {
-        this.isflipped = true;
+    flip(event,status:string): void {
+        if (status === 'Y') {
+            this.isflipped = true;
+        } else {
+            this.isflipped = false;
+        }
+
     }
+
     ngOnDestroy(): void {
         clearInterval(this.setTime);
     }

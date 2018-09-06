@@ -3,7 +3,7 @@
         <div class="main-wrap" fxLayout="row">
                 <div class="main-container" [ngClass]="{'is-flipped' : isflipped}" fxLayout="colmun" 
                     fxLayoutAlign="space-around center"
-                    (mouseover)="flip($event)">
+                    (mouseover)="flip($event,'Y')" (mouseout)="flip($event,'N')">
                     <div class="main-content card-face">
                         <div class="date">
                             {{today | date: 'yyyy.MM.dd'}}
@@ -13,8 +13,14 @@
                         </div>
                     </div>
                     <div class="nav-content card-face">
-                        <div>
-                            111
+                        <div fxLayout="row wrap" class="nav-items">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                            <div>5</div>
+                            <div>6</div>
+                            <div>7</div>
                         </div>
                         <!-- <a [routerLink]="['/main']">main</a>
                         <a [routerLink]="['/menu/three-d-design/screens/screen-test']">test</a> -->

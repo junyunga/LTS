@@ -9,6 +9,33 @@ export class MainTimeComponent implements OnInit {
     isflipped: boolean = false;
     today: number = 0;
     setTime: any = null;
+    menus: object[] = [
+        {
+            name: 'main',
+            link: '/main'
+        },
+        {
+            name: 'three-d-design',
+            link: '/menu/three-d-design/screens/screen-test'
+        },
+        {
+            name: '준비중..',
+            link: '/'
+        },
+        {
+            name: '준비중..',
+            link: '/'
+        },
+        {
+            name: '준비중..',
+            link: '/'
+        },
+        {
+            name: '준비중..',
+            link: '/'
+        }
+        
+    ];
     constructor() { }
 
     ngOnInit() {

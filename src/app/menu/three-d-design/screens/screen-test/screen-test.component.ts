@@ -14,7 +14,7 @@ export class ScreenTestComponent implements OnInit {
     1000
   );
   renderer = new THREE.WebGLRenderer();
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.animationStart();
@@ -27,8 +27,28 @@ export class ScreenTestComponent implements OnInit {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     const cube = new THREE.Mesh(geometry, material);
+    const material2 = new THREE.LineBasicMaterial({ color: 0x00ff00 });
+    const geometry2 = new THREE.Geometry();
+    geometry2.vertices.push(new THREE.Vector3(-2, 0, 0));
+    geometry2.vertices.push(new THREE.Vector3(0, 2, 0));
+    geometry2.vertices.push(new THREE.Vector3(2, 0, 0));
+    geometry2.vertices.push(new THREE.Vector3(4, 0, 0));
+    geometry2.vertices.push(new THREE.Vector3(2, -2, 0));
+    geometry2.vertices.push(new THREE.Vector3(4, -4, 0));
+    geometry2.vertices.push(new THREE.Vector3(0, -2, 0));
+    geometry2.vertices.push(new THREE.Vector3(-4, -4, 0));
+    geometry2.vertices.push(new THREE.Vector3(-2, -2, 0));
+    geometry2.vertices.push(new THREE.Vector3(-4, 0, 0));
+    geometry2.vertices.push(new THREE.Vector3(-2, 0, 0));
+    const line = new THREE.Line(geometry2, material2);
+
+
+
+
 
     this.scene.add(cube);
+    this.scene.add(line);
+
 
     this.camera.position.z = 5;
 

@@ -28,6 +28,7 @@
     "rxjs": "^6.0.0",
     "svg-3d-builder": "0.0.6",
     "three": "^0.96.0",
+    "three-orbit-controls": "^82.1.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

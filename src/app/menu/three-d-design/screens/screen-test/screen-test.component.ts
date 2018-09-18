@@ -1,5 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
 import * as THREE from "three";
+import { Stats } from "fs";
+import test from "three-orbit-controls";
 @Component({
   selector: "app-screen-test",
   templateUrl: "./screen-test.component.html",
@@ -17,46 +19,34 @@ export class ScreenTestComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(this.renderer.domElement);
+    this.camera.position.set(0, 200, 350);
+    const sun = new THREE.DirectionalLight(0xffffff, 1.0);
+    sun.position.set(300, 400, 175);
+    this.scene.add(sun);
+
+    const sun2 = new THREE.DirectionalLight(0x40a040, 0.6);
+    sun2.position.set(-100,350,-200);
+    this.scene.add(sun2);
+
+    
+    
+
     this.animationStart();
   }
 
   animationStart(): void {
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(this.renderer.domElement);
-
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    const material2 = new THREE.LineBasicMaterial({ color: 0x00ff00 });
-    const geometry2 = new THREE.Geometry();
-    geometry2.vertices.push(new THREE.Vector3(-2, 0, 0));
-    geometry2.vertices.push(new THREE.Vector3(0, 2, 0));
-    geometry2.vertices.push(new THREE.Vector3(2, 0, 0));
-    geometry2.vertices.push(new THREE.Vector3(4, 0, 0));
-    geometry2.vertices.push(new THREE.Vector3(2, -2, 0));
-    geometry2.vertices.push(new THREE.Vector3(4, -4, 0));
-    geometry2.vertices.push(new THREE.Vector3(0, -2, 0));
-    geometry2.vertices.push(new THREE.Vector3(-4, -4, 0));
-    geometry2.vertices.push(new THREE.Vector3(-2, -2, 0));
-    geometry2.vertices.push(new THREE.Vector3(-4, 0, 0));
-    geometry2.vertices.push(new THREE.Vector3(-2, 0, 0));
-    const line = new THREE.Line(geometry2, material2);
 
 
 
 
 
-    this.scene.add(cube);
-    this.scene.add(line);
 
 
-    this.camera.position.z = 5;
 
     const test = (): void => {
-      requestAnimationFrame(test);
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-      this.renderer.render(this.scene, this.camera);
+
     };
     test();
   }
